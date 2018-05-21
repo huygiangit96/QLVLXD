@@ -9,6 +9,10 @@ namespace QLVLXD.Controllers
     public class StorageController : Controller
     {
         // GET: Storage
+        public ActionResult StockCur()
+        {
+            return View("Stockcur");
+        }
         public ActionResult StockIn()
         {
             return View("Stockin");
