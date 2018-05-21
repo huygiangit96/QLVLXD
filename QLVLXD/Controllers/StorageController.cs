@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace QLVLXD.Controllers
 {
-    public class StorageController : Controller
+    public class StorageController : SecurityController
     {
         // GET: Storage
         public ActionResult StockCur()
