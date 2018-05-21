@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace QLVLXD.Controllers
 {
-    public class ReportController : Controller
+    public class ReportController : SecurityController
     {
         // GET: Report
         public ActionResult Index()
