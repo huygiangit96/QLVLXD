@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewBag.Title = "Đăng nhập";
+    Layout = null;
+    string Notif = ViewBag.Notif;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản lý dự án</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+    <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900|RobotoDraft:400,100,300,500,700,900'>
+    <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+
+    <link rel="stylesheet" href="/Assets/Login/css/style.css">
+
+
+</head>
+
+<body>
+
+    <!-- Form Mixin-->
+    <!-- Input Mixin-->
+    <!-- Button Mixin-->
+    <!-- Pen Title-->
+    <div class="pen-title">
+        <h1>Quản lý vật liệu xây dựng </h1>
+    </div>
+    <!-- Form Module-->
+    <div class="module form-module">
+        <div class="toggle">
+        </div>
+        <div class="form">
+            @if (Notif != null)
+            {
+                <div class="alert alert-danger">@Notif</div><br /><br />
+            }
+            <form action="/Login/Login" method="post">
+                <fieldset>
+                    <input type="text" name="username" placeholder="Tài khoản hoặc Email" />
+                    <input type="password" name="password" placeholder="Mật khẩu" />
+                    <button type="submit">Đăng nhập</button>
+                </fieldset>
+            </form>
+        </div>
+        <div class="cta"><a href="http://andytran.me">Quên mật khẩu?</a></div>
+    </div>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src='https://codepen.io/andytran/pen/vLmRVp.js'></script>
+
+    <script src="/Assets/Login/js/index.js"></script>
+</body>
+</html>
