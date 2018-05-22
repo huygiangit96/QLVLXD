@@ -9,10 +9,14 @@ namespace Model.EF
     [Table("qlvlxd.vtro_quyen")]
     public partial class vtro_quyen
     {
-        public int ID { get; set; }
+        [Key]
+        [Column(Order = 0)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int ID_VT { get; set; }
 
-        public int? ID_VT { get; set; }
-
-        public int? ID_Quyen { get; set; }
+        [Key]
+        [Column(Order = 1)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int ID_Quyen { get; set; }
     }
 }

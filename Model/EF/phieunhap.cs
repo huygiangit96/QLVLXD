@@ -21,5 +21,13 @@ namespace Model.EF
         public int? ID_NV { get; set; }
 
         public int? Status { get; set; }
+
+        public int? ID_VL { get; set; }
+
+        public virtual nhacc nhacc { get; set; }
+
+        public virtual nhanvien nhanvien { get; set; }
+
+        public virtual vatlieu vatlieu { get; set; }
     }
 }

@@ -76,20 +76,20 @@
                                 <li>
                                     <a><i class="fa fa-table"></i>Quản lý kho <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
-                                        <li><a href="#">Tồn kho</a></li>
-                                        <li><a href="bang.html">Nhập kho</a></li>
-                                        <li><a href="bang.html">Xuất kho</a></li>
+                                        <li><a href="/Storage/StockCur">Danh sách vật liệu</a></li>
+                                        <li><a href="/Storage/StockIn">Nhập kho</a></li>
+                                        <li><a href="/Storage/StockOut">Xuất kho</a></li>
                                     </ul>
                                 </li>
                                 <li>
-                                    <a><i class="fa fa-clone"></i>Báo cáo <span class="fa fa-database"></span></a>
+                                    <a href="/Report/Index"><i class="fa fa-clone"></i>Báo cáo<span class="fa fa-database"></span></a>
                                 </li>
                                 <li>
                                     <a><i class="fa fa-desktop"></i> Quản lý thành phần<span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
-                                        <li><a href="tinnhan.html">Nhân viên</a></li>
-                                        <li><a href="lichlamviec.html">Đội thi công</a></li>
-                                        <li><a href="chamcong.html">Nhà cung cấp</a></li>
+                                        <li><a href="/Component/ConstructorTeam">Nhân viên</a></li>
+                                        <li><a href="/Component/Employee">Đội thi công</a></li>
+                                        <li><a href="/Component/Supplier">Nhà cung cấp</a></li>
                                     </ul>
                                 </li>                                                             
                             </ul>
@@ -222,10 +222,6 @@
 
     <!-- Custom Theme Scripts -->
     <script src="/Assets/build/js/custom.js"></script>
-    @RenderSection("Customer", required: false)
-    @RenderSection("Employee", required: false)
-    @RenderSection("Project", required: false)
-    @RenderSection("Message", required: false)
-    @RenderSection("Asignment", required: false)
+    @RenderSection("StockCur", required: false)
 </body>
 </html>

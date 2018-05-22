@@ -28,6 +28,11 @@ namespace Model.EF
                 .Property(e => e.Ten)
                 .IsUnicode(false);
 
+            modelBuilder.Entity<doithicong>()
+                .HasMany(e => e.phieuxuats)
+                .WithOptional(e => e.doithicong)
+                .HasForeignKey(e => e.ID_Team);
+
             modelBuilder.Entity<nhacc>()
                 .Property(e => e.Ten)
                 .IsUnicode(false);
@@ -39,6 +44,11 @@ namespace Model.EF
             modelBuilder.Entity<nhacc>()
                 .Property(e => e.SoDT)
                 .IsUnicode(false);
+
+            modelBuilder.Entity<nhacc>()
+                .HasMany(e => e.phieunhaps)
+                .WithOptional(e => e.nhacc)
+                .HasForeignKey(e => e.ID_NhaCC);
 
             modelBuilder.Entity<nhanvien>()
                 .Property(e => e.Ten)
@@ -60,6 +70,20 @@ namespace Model.EF
                 .Property(e => e.MatKhau)
                 .IsUnicode(false);
 
+            modelBuilder.Entity<nhanvien>()
+                .HasMany(e => e.phieunhaps)
+                .WithOptional(e => e.nhanvien)
+                .HasForeignKey(e => e.ID_NV);
+
+            modelBuilder.Entity<nhanvien>()
+                .HasMany(e => e.phieuxuats)
+                .WithOptional(e => e.nhanvien)
+                .HasForeignKey(e => e.ID_NV);
+
+            modelBuilder.Entity<phieuxuat>()
+                .Property(e => e.phieuxuatcol)
+                .IsUnicode(false);
+
             modelBuilder.Entity<quyen>()
                 .Property(e => e.Ten)
                 .IsUnicode(false);
@@ -68,6 +92,11 @@ namespace Model.EF
                 .Property(e => e.Ten)
                 .IsUnicode(false);
 
+            modelBuilder.Entity<vaitro>()
+                .HasMany(e => e.nhanviens)
+                .WithOptional(e => e.vaitro)
+                .HasForeignKey(e => e.ID_VT);
+
             modelBuilder.Entity<vatlieu>()
                 .Property(e => e.Ten)
                 .IsUnicode(false);
@@ -75,6 +104,16 @@ namespace Model.EF
             modelBuilder.Entity<vatlieu>()
                 .Property(e => e.Image)
                 .IsUnicode(false);
+
+            modelBuilder.Entity<vatlieu>()
+                .HasMany(e => e.phieunhaps)
+                .WithOptional(e => e.vatlieu)
+                .HasForeignKey(e => e.ID_VL);
+
+            modelBuilder.Entity<vatlieu>()
+                .HasMany(e => e.phieuxuats)
+                .WithOptional(e => e.vatlieu)
+                .HasForeignKey(e => e.ID_VL);
         }
     }
 }

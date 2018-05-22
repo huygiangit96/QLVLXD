@@ -19,7 +19,7 @@ namespace QLVLXD.Controllers
         }
         public ActionResult ConstructorTeam()
         {
-            return View("Constructor");
+            return View("ConstructorTeam");
         }
     }
 }

@@ -9,6 +9,12 @@ namespace Model.EF
     [Table("qlvlxd.nhacc")]
     public partial class nhacc
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public nhacc()
+        {
+            phieunhaps = new HashSet<phieunhap>();
+        }
+
         public int ID { get; set; }
 
         [StringLength(45)]
@@ -19,5 +25,9 @@ namespace Model.EF
 
         [StringLength(20)]
         public string SoDT { get; set; }
+        public int Status { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<phieunhap> phieunhaps { get; set; }
     }
 }

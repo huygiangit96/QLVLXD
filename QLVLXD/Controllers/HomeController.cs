@@ -13,5 +13,9 @@ namespace QLVLXD.Controllers
         {
             return View();
         }
+        public ActionResult Err403()
+        {
+            return View("Err403");
+        }
     }
 }

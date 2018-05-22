@@ -21,5 +21,16 @@ namespace Model.EF
         public int? ID_Team { get; set; }
 
         public int? Status { get; set; }
+
+        public int? ID_VL { get; set; }
+
+        [StringLength(45)]
+        public string phieuxuatcol { get; set; }
+
+        public virtual doithicong doithicong { get; set; }
+
+        public virtual nhanvien nhanvien { get; set; }
+
+        public virtual vatlieu vatlieu { get; set; }
     }
 }

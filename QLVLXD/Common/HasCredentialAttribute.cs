@@ -27,13 +27,11 @@ namespace QLVLXD.Common
         }
         protected override void HandleUnauthorizedRequest(AuthorizationContext filterContext)
         {
-            string Message = "Bạn không có quyền thực hiện thao tác này";
 
             var values = new RouteValueDictionary(new
             {
-                action = "Login",
-                controller = "Account",
-                exceptiontext = Message
+                action = "Err403",
+                controller = "Home"
             });
             filterContext.Result = new RedirectToRouteResult(values);
         }
