@@ -74,7 +74,7 @@
                                     Số lượng<span class="required">*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <input type="text" id="last-name" name="soluong" required="required" class="form-control col-md-7 col-xs-12">
+                                    <input type="number" id="last-name" name="soluong" required="required" class="form-control col-md-7 col-xs-12">
                                 </div>
                             </div>                                                     
                             <div class="ln_solid"></div>
@@ -115,6 +115,7 @@
                                     <th>Số lượng</th>
                                     <th>Nhà cung cấp</th>
                                     <th>Người nhập</th>
+                                    <th>Ngày nhập</th>
                                     <th>Trạng thái</th>
                                 </tr>
                             </thead>
@@ -123,7 +124,7 @@
                                 {
                                     string but_text = "Đã duyệt";
                                     string but_class = "btn btn-success";
-                                    if(item.Status == 0)
+                                    if (item.Status == 0)
                                     {
                                         but_text = "Chờ duyệt";
                                         but_class = "btn btn-warning";
@@ -134,6 +135,12 @@
                                         <td>@item.SoLuong</td>
                                         <td>@item.NhaCC</td>
                                         <td>@item.NhanVien</td>
+                                        @if (item.NgayNhap != null)
+                                        {
+                                            <td>@Convert.ToDateTime(item.NgayNhap).ToString("dd-MM-yyyy")</td>
+                                        }
+                                        else
+                                        { <td></td>}
                                         <td><button type="button" class="@but_class">@but_text</button></td>
                                     </tr>
                                 }
@@ -142,14 +149,7 @@
                     </div>
                 </div>
             </div>
-        </div>
-
-        
-
-        
-
-
-        
+        </div>      
     </div>
 </div>
 
